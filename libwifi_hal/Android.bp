@@ -172,7 +172,7 @@ wifi_cc_defaults {
                 // whole_static_libs: ["libwifi-hal-mrvl"],
             },
             mediaTek: {
-                defaults: ["libwifi-hal-mediatek"],
+                whole_static_libs: ["//vendor/mediatek/mokey:libwifi-hal-mt66xx"],
             },
             nxp: {
                 whole_static_libs: ["libwifi-hal-nxp"],
