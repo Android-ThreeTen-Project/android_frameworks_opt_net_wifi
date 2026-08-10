@@ -161,7 +161,11 @@ wifi_cc_defaults {
                 whole_static_libs: ["libwifi-hal-syna"],
             },
             qcwcn: {
-                whole_static_libs: ["libwifi-hal-qcom"],
+                // The Android 14 hardware/qcom/wlan tree also exports a
+                // cc_defaults module named libwifi-hal-qcom. Select the
+                // restored Make-backed prebuilt explicitly so this dependency
+                // gets a vendor static link variant.
+                whole_static_libs: ["prebuilt_libwifi-hal-qcom"],
             },
             mrvl: {
                 // this is commented because none of the nexus devices
