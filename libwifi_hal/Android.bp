@@ -218,7 +218,10 @@ wifi_cc_defaults {
                 defaults: ["google_wifi_config_lib_defaults"],
             },
             qcwcn: {
-                shared_libs: ["libcld80211", "libcrypto"],
+                // The Make-backed QCOM archive cannot carry the shared
+                // dependencies declared by its Android.bp module. Keep PASN
+                // symbols available when the archive is linked here.
+                shared_libs: ["libcld80211", "libcrypto", "libpasn"],
             },
         },
     },
